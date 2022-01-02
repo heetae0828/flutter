@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
             },
             child: Row(
               children: [
-                Text('개봉동'),
+                Text('개봉동1'),
                 Icon(Icons.keyboard_arrow_down)
               ],
             ),
