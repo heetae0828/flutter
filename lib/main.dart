@@ -12,51 +12,34 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar:AppBar(
-          title: GestureDetector(
-            onTap: (){
-              print('실행');
-            },
-            child: Row(
-              children: [
-                Text('개봉동2'),
-                Icon(Icons.keyboard_arrow_down)
-              ],
-            ),
-          ),
-
-          actions: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.search),
-                Icon(Icons.menu),
-                Icon(Icons.add_alert),
-              ],
-            )],
         ),
 
-        body: SizedBox(
-            child: ElevatedButton(
-                child: Text('버튼'),
-                onPressed: (){},
-            )
-        ),
-
-        bottomNavigationBar: BottomAppBar(
-          child: SizedBox(
-            height: 50,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children:[
-                  Icon(Icons.phone),
-                  Icon(Icons.message),
-                  Icon(Icons.contact_page),
-                ],)
+        body: Container(
+          height: 150,
+          padding: EdgeInsets.all(20),
+          child: Row(
+            children: [
+              Image.asset('assets/images/cobdori.jpeg'),
+              Container(
+                width: 150, padding: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('카메라'),
+                    Text('a'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.favorite),
+                        Text('4'),
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
         )
-
-
-
       )
 
     );
