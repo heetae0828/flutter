@@ -2,8 +2,30 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    title: 'test',
+    home: MyApp(),
+  ));
 }
+
+class firstpage extends StatelessWidget {
+  const firstpage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('first page'),
+      ),
+      body: Container(
+        width: 150, color: Colors.green,
+
+
+      )
+    );
+  }
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,11 +34,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar:AppBar(
+          title: RaisedButton(
+            onPressed: (){
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context)=> firstpage()),);
+            },
+          )
         ),
 
         body: Container(
           height: 150,
           padding: EdgeInsets.all(20),
+
           child: Row(
             children: [
               Image.asset('assets/images/cobdori.jpeg'),
@@ -32,6 +61,7 @@ class MyApp extends StatelessWidget {
                       children: [
                         Icon(Icons.favorite),
                         Text('4'),
+
                       ],
                     )
                   ],
